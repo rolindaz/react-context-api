@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 
 export default function SingleProductPage() {
 
     const { id } = useParams()
     const url = `https://fakestoreapi.com/products/${id}`
     const [product, setProduct] = useState([])
+    const navigation = useNavigate()
 
     useEffect(() => {
         fetch(url)
@@ -17,6 +18,9 @@ export default function SingleProductPage() {
 
     return (
         <div className="container mt-5">
+            <button className="btn btn-primary" onClick={() => navigation(-1)}>
+                Back
+            </button>
             <div key={product.id} className="col">
                 <div className="product-card h-100 d-flex flex-column p-4">
                     <div className="img-wrap">
