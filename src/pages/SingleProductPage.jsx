@@ -43,8 +43,8 @@ export default function SingleProductPage() {
                                 <i className="bi bi-star-fill text-warning"></i>
                                 {/* <small className="text-muted">
                                     {product.rating.count}
-                                </small> */}
-                                {/* <small className="text-muted">
+                                </small>
+                                <small className="text-muted">
                                     ({product.rating.count})
                                 </small> */}
                             </div>
