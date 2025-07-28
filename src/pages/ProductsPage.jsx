@@ -1,6 +1,9 @@
+import { useGlobalContext } from "../contexts/GlobalContext"
 import ProductsList from "../components/ProductsList"
 
 export default function ProductsPage() {
+
+    const { productData } = useGlobalContext()
 
     return (
         <>
@@ -15,7 +18,7 @@ export default function ProductsPage() {
                         </p>
                     </div>
                 </div>
-                <ProductsList />
+                <ProductsList productData={productData} />
 
             </main>
         </>

@@ -1,31 +1,11 @@
-import { useState, useEffect } from "react"
+import { useGlobalContext } from "../contexts/GlobalContext"
 import { Link } from "react-router-dom"
 
 export default function ProductsList() {
 
-    const url = 'https://fakestoreapi.com/products'
-    const [productData, setProductData] = useState([{
-        id: null,
-        title: '',
-        price: null,
-        description: '',
-        category: '',
-        image: '',
-        rating: {
-            rate: null,
-            count: null
-        }
-    }])
-
-    useEffect(() => {
-        fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                setProductData(data)
-            })
-    }, [])
+    const { productData } = useGlobalContext()
     console.log(productData);
+
 
     return (
         <div className="container py-3">

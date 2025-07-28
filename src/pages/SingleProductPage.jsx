@@ -5,7 +5,7 @@ export default function SingleProductPage() {
 
     const { id } = useParams()
     const url = `https://fakestoreapi.com/products/${id}`
-    const [product, setProduct] = useState([])
+    const [product, setProduct] = useState(null)
     const navigation = useNavigate()
 
     useEffect(() => {
@@ -14,7 +14,12 @@ export default function SingleProductPage() {
             .then(data => {
                 setProduct(data)
             })
-    })
+            .catch((err) => console.error('Error fetching product', err))
+    }, [url])
+
+    if (!product) {
+        return (<div>Loading...</div>)
+    }
 
     return (
         <div className="container mt-5">
@@ -41,12 +46,12 @@ export default function SingleProductPage() {
                             </span>
                             <div>
                                 <i className="bi bi-star-fill text-warning"></i>
-                                {/* <small className="text-muted">
+                                <small className="text-muted">
                                     {product.rating.count}
                                 </small>
                                 <small className="text-muted">
                                     ({product.rating.count})
-                                </small> */}
+                                </small>
                             </div>
                         </div>
                         <div className="card-footer d-flex justify-content-between bg-light">
