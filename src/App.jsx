@@ -4,13 +4,13 @@ import ProductsPage from "./pages/ProductsPage"
 import AboutUsPage from "./pages/AboutUsPage"
 import DefaultLayout from "./layouts/DefaultLayout"
 import SingleProductPage from "./pages/SingleProductPage"
-import { GlobalProvider } from "./contexts/GlobalContext"
+import { ProductsProvider } from "./contexts/ProductsContext"
 
 function App() {
 
   return (
     <>
-      <GlobalProvider>
+      <ProductsProvider>
         <BrowserRouter>
           <Routes>
             <Route Component={DefaultLayout}>
@@ -21,7 +21,7 @@ function App() {
             </Route>
           </Routes>
         </BrowserRouter>
-      </GlobalProvider>
+      </ProductsProvider>
     </>
   )
 }

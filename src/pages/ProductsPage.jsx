@@ -1,9 +1,10 @@
-import { useGlobalContext } from "../contexts/GlobalContext"
+import { useProductsContext } from "../contexts/ProductsContext"
 import ProductsList from "../components/ProductsList"
+
 
 export default function ProductsPage() {
 
-    const { productData } = useGlobalContext()
+    const { productData } = useProductsContext()
 
     return (
         <>

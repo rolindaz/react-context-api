@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
-const GlobalContext = createContext()
+const ProductsContext = createContext()
 
-function GlobalProvider({ children }) {
+function ProductsProvider({ children }) {
     const url = 'https://fakestoreapi.com/products'
     const [productData, setProductData] = useState([])
 
@@ -17,17 +17,17 @@ function GlobalProvider({ children }) {
     console.log(productData);
 
     return (
-        <GlobalContext.Provider value={{
+        <ProductsContext.Provider value={{
             productData,
             setProductData
         }}>
             {children}
-        </GlobalContext.Provider>
+        </ProductsContext.Provider>
     )
 }
 
-function useGlobalContext() {
-    return useContext(GlobalContext)
+function useProductsContext() {
+    return useContext(ProductsContext)
 }
 
-export { GlobalProvider, useGlobalContext }
+export { ProductsProvider, useProductsContext }

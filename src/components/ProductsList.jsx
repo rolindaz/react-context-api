@@ -1,9 +1,9 @@
-import { useGlobalContext } from "../contexts/GlobalContext"
+import { useProductsContext } from "../contexts/ProductsContext"
 import { Link } from "react-router-dom"
 
 export default function ProductsList() {
 
-    const { productData } = useGlobalContext()
+    const { productData } = useProductsContext()
     console.log(productData);
 
 
