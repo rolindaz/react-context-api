@@ -1,0 +1,32 @@
+@import 'bootstrap';
+@import 'bootstrap-icons';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  height: 600px;
+}
+
+.logo {
+  width: 80px;
+}
+
+.blog {
+  img {
+    object-fit: cover;
+  }
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.img-wrap {
+  height: 400px;
+}
